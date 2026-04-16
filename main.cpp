@@ -6,13 +6,19 @@
 using namespace std;
 
 int main() {
+    // Create game object
     Tetris game;
 
+    // Infinite game loop
     while (true) {
+
+        // Draw current game state to screen
         game.draw();
+
+        // Update game logic (move piece down)
         game.update();
 
-        // simple automatic delay
+        // Wait 300ms so game doesn't run too fast
         this_thread::sleep_for(chrono::milliseconds(300));
     }
 

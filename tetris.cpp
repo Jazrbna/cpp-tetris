@@ -3,19 +3,19 @@
 
 using namespace std;
 
-// Constructor runs when a Tetris object is created
+// constructor runs when a tetris object is created
 Tetris::Tetris() {
-    // Clear the grid at the start
+    // clear the grid at the start
     resetGrid();
 
-    // Start piece roughly in the middle of the screen
+    // start piece roughly in the middle of the screen
     currentX = width / 2;
 
-    // Start at top of screen
+    // start at top of screen
     currentY = 0;
 }
 
-// Sets all grid cells to empty (0)
+// sets all grid cells to empty (0)
 void Tetris::resetGrid() {
     for (int y = 0; y < height; y++) {
         for (int x = 0; x < width; x++) {
@@ -24,12 +24,12 @@ void Tetris::resetGrid() {
     }
 }
 
-// Prints the grid to the terminal
+// prints the grid to the terminal
 void Tetris::draw() {
-    // Clears console screen each frame (Windows = cls, Linux/mac = clear)
+    // clears console screen each frame
     system("clear");
 
-    // Loop through every row
+    // loop through every row
     for (int y = 0; y < height; y++) {
 
         // Loop through every column
@@ -44,28 +44,28 @@ void Tetris::draw() {
                 cout << (grid[y][x] ? "#" : ".");
         }
 
-        // Move to next line after each row
+        // move to next line after each row
         cout << endl;
     }
 }
 
-// Updates game state (called every frame)
+// updates game state (called every frame)
 void Tetris::update() {
-    // Move piece down by 1 cell each update
+    // move piece down by 1 cell each update
     currentY++;
 }
 
-// Move piece left
+// move piece left
 void Tetris::moveLeft() {
     currentX--;
 }
 
-// Move piece right
+// move piece right
 void Tetris::moveRight() {
     currentX++;
 }
 
-// Move piece down faster
+// move piece down faster
 void Tetris::moveDown() {
     currentY++;
 }

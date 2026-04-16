@@ -19,7 +19,7 @@ int main() {
         game.update();
 
         // Wait 300ms so game doesn't run too fast
-        std::this_thread::sleep_for(chrono::milliseconds(300));
+        this_thread::sleep_for(chrono::milliseconds(300));
     }
 
     return 0;
